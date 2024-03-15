@@ -9,12 +9,21 @@ import { ProductProps, groups, popularProducts } from './mock'
 import { CardRedirect } from "@/components/cards/CardRedirect";
 import { formatMoeda } from '../../util/rotinas'
 import TyneBarChartsHorizontal from "@/components/charts/tyne-bar-chart-horizontal";
+import { useEffect, useState } from "react";
 export default function CardsStats() {
 
 
   const formatNumber = (delta: string) => {
     return new Intl.NumberFormat("pt-BR").format(Number(delta))
   }
+
+  const [loadingTeste, setLoadingTeste] = useState(true)
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoadingTeste(false)
+    }, 3000)
+  })
 
   return (
     <div className="flex w-full flex-col gap-4 px-8 py-4 ">
@@ -24,6 +33,7 @@ export default function CardsStats() {
 
       <div className="flex flex-wrap gap-2">
         <CardInfo
+          loading={loadingTeste}
           visual={{
             icon: ListOrdered
           }}
@@ -31,6 +41,7 @@ export default function CardsStats() {
           title="Total de Pedidos"
           description={formatNumber("3000")} />
         <CardInfo
+          loading={loadingTeste}
           visual={{
             icon: ListOrdered
           }}
@@ -38,12 +49,14 @@ export default function CardsStats() {
           title="Pedidos em aberto"
           description={formatNumber("450")} />
         <CardInfo
+          loading={loadingTeste}
           visual={{
             icon: Banknote
           }}
           title="Faturamento total:"
           description={formatMoeda("3000000")} />
         <CardInfo
+          loading={loadingTeste}
           visual={{
             icon: Banknote
           }}

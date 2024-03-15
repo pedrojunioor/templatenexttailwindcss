@@ -79,12 +79,12 @@ export default function Sidebar() {
                                 icon: AlertCircle,
                                 variant: pathname === 'tabs' ? 'default' : 'ghost',
                             },
-                            // {
-                            //     title: "Forums",
-                            //     label: "",
-                            //     icon: MessagesSquare,
-                            //     variant: pathname === 'inbox' ? 'default' : 'ghost',
-                            // },
+                            {
+                                title: "Accordion",
+                                label: "",
+                                icon: MessagesSquare,
+                                variant: pathname === 'accordion' ? 'default' : 'ghost',
+                            },
                             // {
                             //     title: "Shopping",
                             //     label: "",
